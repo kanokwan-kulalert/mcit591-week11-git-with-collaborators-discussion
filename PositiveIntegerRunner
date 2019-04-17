@@ -4,18 +4,18 @@ import java.lang.Math;
 
 public class PositiveInteger {
 	int num;
-	
+
 
 	public PositiveInteger(int num) {
 		this.num = num;
 	}
 
 	//Note that all methods here have to have the same signature as the assignment prompt spcified
-	
+
 	//Check if num is perfect (equal to the sum of all its factors)
 	public boolean isPerfect() {
 		int sumFactors = 0;
-		
+
 			for (int i = 1; i < num; i++) {
 				if(num%i == 0) {
 					sumFactors = sumFactors + i;
@@ -26,9 +26,9 @@ public class PositiveInteger {
 			} else {
 				return false;
 			}
-		
+
 	}
-	
+
 	//Check if num is abundant (sum of its factors (aside from the number) > the number itself)
 	public boolean isAbundant() {
 		int sumFactors = 0;
@@ -42,10 +42,10 @@ public class PositiveInteger {
 			} else {
 				return false;
 			}
-	
+
 
 	}
-	
+
 	//Check if num is "narcissistic" (sum of its own digits to the power of the number of digits = the number)
 	public boolean isNarcissistic() {
 		int sumFactorsToTheNumberOfDigits = 0;
@@ -56,7 +56,7 @@ public class PositiveInteger {
 		//System.out.println("nString: "+ nString);
 		numDigit = nString.length();
 		//System.out.println("numDigit: " + numDigit);
-		
+
 		for(int i = (numDigit-1); i >= 0 ; i--) {
 			//System.out.println("i is: " + i);
 			//System.out.println("10 to the i is: " + Math.pow(10, i));
@@ -67,21 +67,21 @@ public class PositiveInteger {
 			//System.out.println("sumFactorsToTheNumberOfDigits is: " + sumFactorsToTheNumberOfDigits);
 			//System.out.println(sumFactorsToTheNumberOfDigits);
 		}
-		
-		
-		
+
+
+
 		if (sumFactorsToTheNumberOfDigits == num) {
 			return true; //narcissistic
 		} else {
 			return false;
 		}
-		
+
 	}
-	
+
 	//Commenting out main method
-	
+
 	public static void main(String[] args) {
-		
+
 		Scanner in = new Scanner(System.in);
 		System.out.println("Please enter your number: "); // Ask for the number
 		int numberInput = in.nextInt();
@@ -92,13 +92,14 @@ public class PositiveInteger {
 		boolean myNumberIsPerfect = myPositiveInteger.isPerfect();
 		boolean myNumberIsAbundant = myPositiveInteger.isAbundant();
 		boolean myNumberIsNarcissistic = myPositiveInteger.isNarcissistic();
-		
+
 		System.out.println("isPerfect: " + myNumberIsPerfect);
 		System.out.println("isAbundant: " + myNumberIsAbundant);
 		System.out.println("isNarcissistic: " + myNumberIsNarcissistic);
 
 		in.close();
-	} 
-	
-	
+	}
+
+	//This is Jill's argument
+
 }
